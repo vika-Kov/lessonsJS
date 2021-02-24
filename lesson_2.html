@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Задание 3//
+        let firstNum  = Math.floor(Math.random() * 200 - 100);
+        let secondNum = Math.floor(Math.random() * 200 - 100);
+        console.log(firstNum);
+        console.log(secondNum);
+        if (firstNum >= 0 & secondNum > 0){
+            endRes = firstNum / secondNum; 
+            textRes = 'Разность чисел =';
+        } else if (firstNum < 0 & secondNum < 0){
+            endRes = firstNum * secondNum;
+            textRes = 'Произведение чисел =';
+        } else {
+            endRes = firstNum + secondNum;
+            textRes = 'Сумма чисел =';
+        }
+        console.log(textRes + ' ' + endRes);
+
+    </script>
+</body>
+</html>
