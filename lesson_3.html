@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+    console.log('Первое задание');
+        function isPrime(num){
+            if(isNaN(num) || num < 0 || num != num << 0) return false;
+            if(num === 0 || num===1) return false;
+            if(num < 4) return true;
+            if(num % 2 === 0 || num % 3 === 0) return false;
+            for(let i = 5, N = Math.sqrt(num); i <= N; i += 2)
+                if(num % i === 0) return false;
+            return true;
+        }
+
+        let i = 0;
+                while (i<= 100){
+                    if (isPrime(i)){
+                        console.log(i);
+                    }
+                    i++;
+                }
+
+    console.log('Второе задание');
+        const currentCart = [
+                        ['рубашка',100,2],
+                        ['кофта',69,1],
+                        ['джинсы',500,6],
+                        ['футболка',30,3],
+                        ['поло',50,3],
+                        ['шорты',235,4],
+                    ];
+
+        
+            // console.log(currentCart, currentCart.length);
+
+            function countBascketPrice(cart){
+                let cartPrice = 0;
+                for (let i = 0; i < cart.length; i++){
+                    // console.log(cart[i]);
+                    cartPrice=cartPrice+cart[i][1]*cart[i][2];
+                }
+                return cartPrice;
+            }
+            console.log(countBascketPrice(currentCart) + ' RUB');
+
+    console.log('Третье задание');
+        for(var s = 0; s <= 9; console.log(s++)) {/*здесь пусто*/}
+        
+    </script>
+</body>
+</html>
