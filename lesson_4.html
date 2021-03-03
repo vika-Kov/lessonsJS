@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    console.log('Первое задание');
+        function calcDigit(number){
+            if (number > 999 || number < 0){
+                console.log('Слишком большое/маленькое число');
+                return{};
+            }
+            const result = {
+                сотни:0,
+                десятки:0,
+                единицы:0,
+            }
+            result.сотни = Math.floor(number / 100);
+        
+            result.десятки = Math.floor((number % 100) / 10);
+        
+            result.единицы = number % 10;
+
+            return result;
+        }
+        console.log(calcDigit(295));
+        console.log(calcDigit(65));
+        console.log(calcDigit(100));
+        console.log(calcDigit(8));
+        console.log(calcDigit(8666666));
+
+console.log('Второе задание');
+        const currentCart =[
+                {desc: 'рубашка',
+                price:100,
+                quantity:2,},
+                {desc: 'кофта',
+                price:69,
+                quantity:2,},
+                {desc: 'джинсы',
+                price:500,
+                quantity:1,},
+            ];
+
+        function countBascketPrice(cart){
+            let cartPrice=0;
+            for (let i = 0; i < currentCart.length; i++){
+                cartPrice+=currentCart[i].price*currentCart[i].quantity;
+            }
+            return cartPrice;
+            }
+        console.log(countBascketPrice(currentCart) + ' RUB');
+    </script>
+</body>
+</html>
