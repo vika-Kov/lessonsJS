@@ -10,23 +10,25 @@
 <body>
     <script>
     console.log('Первое задание');
-        function isPrime(num){
-            if(isNaN(num) || num < 0 || num != num << 0) return false;
-            if(num === 0 || num===1) return false;
-            if(num < 4) return true;
-            if(num % 2 === 0 || num % 3 === 0) return false;
-            for(let i = 5, N = Math.sqrt(num); i <= N; i += 2)
-                if(num % i === 0) return false;
-            return true;
+        let i = 0; 
+        while (i < 100){
+            if (isPrimeNumber(i)){
+                console.log(i);
+            }
+            i++;
         }
 
-        let i = 0;
-                while (i<= 100){
-                    if (isPrime(i)){
-                        console.log(i);
-                    }
-                    i++;
-                }
+    function isPrimeNumber(number){
+        if (number < 2){
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++){
+            if (number % i === 0){
+                return false;
+            }
+        }
+        return true;
+    }
 
     console.log('Второе задание');
         const currentCart = [
