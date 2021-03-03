@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+console.log('Задание 3');
+        let firstNum  = Math.floor(Math.random() * 200 - 100);
+        let secondNum = Math.floor(Math.random() * 200 - 100);
+        console.log(firstNum);
+        console.log(secondNum);
+        if (firstNum >= 0 & secondNum > 0){
+            endRes = firstNum / secondNum; 
+            textRes = 'Разность чисел =';
+        } else if (firstNum < 0 & secondNum < 0){
+            endRes = firstNum * secondNum;
+            textRes = 'Произведение чисел =';
+        } else {
+            endRes = firstNum + secondNum;
+            textRes = 'Сумма чисел =';
+        }
+        console.log(textRes + ' ' + endRes);
+       
+       
+console.log('Задание 4');
+        let a = Math.floor(Math.random() * 15)
+            //console.log('Число = ' + a);
+
+        function show(a){
+            for (let index = a; index < 16; index++) {
+                console.log(index);
+                
+            }
+        }
+
+        switch (a) {
+        case 0:
+            show(0);     
+            break;
+        case 1:
+            show(1);     
+            break;
+        case 2:
+            show(2);     
+            break;
+        case 3:
+            show(3);     
+            break;
+        case 4:
+            show(4);
+            break;
+        case 5:
+            show(5);
+            break;
+        case 6:
+            show(6);
+            break;
+        case 7:
+            show(7);
+            break;
+        case 8:
+            show(8);
+            break;
+        case 9:
+            show(9);
+            break;
+
+        case 10:
+            show(10);     
+            break;
+        case 11:
+            show(11);     
+            break;
+        case 12:
+            show(12);     
+            break;
+        case 13:
+            show(13);
+            break;
+        case 14:
+            show(14);
+            break;
+        case 15:
+            show(15);
+            break;
+        default:
+            console.log("Упс, что-то пошло не так");
+    }
+console.log('Задание 5');
+        function add(a,b){
+            return a+b;
+        }
+        
+        function substract(a,b){
+            return a-b;
+        }
+
+        function divide(a,b){
+            return a/b;
+        }
+
+        function multiply(a,b){
+            return a*b;
+        }
+
+        console.log('Операция сложения = ' + add(4,10));
+        console.log('Операция вычитания = ' + substract(4,10));
+        console.log('Операция деления = ' + divide(4,10));
+        console.log('Операция умножения = ' + multiply(4,10));
+
+
+console.log('Задание 6');
+    function mathOperation(arg1, arg2, operation){
+        switch (operation) {
+            case 'add':
+                return arg1 + arg2;
+                break;
+        case 'substract':
+                return arg1 - arg2;
+                break;
+        case 'divide':
+                return arg1 / arg2;
+                break;
+        case 'multiply':
+            return arg1 * arg2;
+        default:
+            console.log("Упс, что-то пошло не так");
+        }
+    }
+
+    console.log('Операция сложения = ' + mathOperation(2, 15, 'add'));
+    console.log('Операция вычитания = ' + mathOperation(2, 15, 'substract'));
+    console.log('Операция деления = ' + mathOperation(2, 15, 'divide'));
+    console.log('Операция умножения = ' + mathOperation(2, 15, 'multiply'));
+</script>
+</body>
+</html>
