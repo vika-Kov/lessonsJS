@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <style>
+        *{margin: 0;padding: 0;background: #2e353d;}
+        .menuButton{width: 150px;padding: 15px;margin: 10px;color: white;background: #007b32;text-align: center;cursor: pointer;}
+        .menuButton:hover{background: #009641;}
+        #game{border-collapse: collapse;margin: 2% auto 0;}
+        #menu{display: flex;justify-content: center;}
+        td.cell{width: 20px;height: 20px;border: 1px dotted #eee;border-collapse: collapse;}
+        .food{background: #00d021;}
+        .wall{background: #ff004c;}
+        .snakeBody{background: #e5e5e5;}
+        .snakeHead{ background: #9b0013;}
+        .disabled {background: #7c7c7c;}
+        .disabled:hover{background: #7c7c7c;}
+        .score_panel_nums{display: flex; justify-content: center;}
+        .score_nums{color:white; font-size: 24px;line-height: 29px;}
+    </style>
+</head>
+<body>    
+    <div id="game-wrap">
+        <table id="game"></table>
+    </div>
+    <div id="menu">
+        <div id="playButton" class="menuButton">Старт</div>
+        <div id="newGameButton" class="menuButton">Новая игра</div>
+    </div>
+
+    <div class="score_panel_nums">
+        <span class="score_nums">0000</span> 
+    </div>
+    <script src="lesson_7.js"></script>
+</body>
+</html>
