@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Card</title>
+</head>
+<body>
+<h1>Корзина</h1>
+<div class="shoppingCard">
+
+</div>
+<script>
+  const shoppingCard = [
+    {description: 'Футболка', price: 100, quantity: 2},
+    {description: 'Кофта', price: 600, quantity: 3},
+    {description: 'Джинсы', price: 1000, quantity: 1}
+  ]
+  const shoppingCard1 = []
+
+  function checkCard(card) {
+
+    const result = document.createElement('div');
+
+    if (card.length === 0) {
+      result.innerHTML += 'Корзина пустая';
+      return result;
+    }
+
+    let productQuantity = 0,
+      productSumm = 0;
+    card.forEach((element) => {
+      productQuantity += element.quantity;
+      productSumm += element.price * element.quantity;
+    })
+
+    result.appendChild(createTable(card));
+
+    const message = `В корзине: ${productQuantity} предметов на сумму ${productSumm} рублей`;
+    result.innerHTML += message;
+    return result;
+  }
+
+  function createTable(card) {
+    const cardElement = document.createElement('table');
+    const tableHeader = `
+         <tr>
+         <th>Номер</th>
+         <th>Название</th>
+         <th>Цена</th>
+         <th>Кол-во</th>
+        </tr>
+        `;
+    cardElement.innerHTML += tableHeader;
+    let i = 1;
+    card.forEach((element) => {
+      cardElement.innerHTML += `
+         <tr>
+         <td>${i}</td>
+          <td>${element.description}</td>
+          <td>${element.price}</td>
+          <td>${element.quantity}</td>
+         </tr>
+
+          `
+      i++;
+    })
+
+    return cardElement;
+  }
+
+  const container = document.querySelector('.shoppingCard');
+  container.appendChild(checkCard(shoppingCard1));
+
+
+
+</script>
+</body>
+</html>

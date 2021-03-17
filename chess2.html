@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chess_Board</title>
+    <style>
+        .figure { text-align: center; background-color: #eeeeee; }
+        .centered { display: inline-block; margin: 0; }
+        .chess-board { border-spacing: 0; border-collapse: collapse; }
+        .chess-board th { padding: .5em; }
+        .chess-board td { border: 1px solid; width: 5em; height: 5em; text-align: center; vertical-align: middle; }
+        .chess-board .white { background: #f0d9b5; }
+        .chess-board .black { background: #b58863; }
+    </style>
+</head>
+<body>
+<div class="figure"></div>
+<script>
+    const box = document.querySelector('.figure');
+    const chessBoardContainer = document.createElement('div'),
+      tableChessBoard = document.createElement('table');
+
+    chessBoardContainer.classList.add('centered');
+    tableChessBoard.classList.add('chess-board');
+
+
+    tableChessBoard.innerHTML = `
+        <tr>
+     <th></th>
+     <th>a</th>
+     <th>b</th>
+     <th>c</th>
+     <th>d</th>
+     <th>e</th>
+     <th>f</th>
+     <th>g</th>
+     <th>h</th>
+    </tr>
+`
+    box.appendChild(chessBoardContainer);
+    chessBoardContainer.appendChild(tableChessBoard);
+
+
+    for (let rowNumber = 1; rowNumber <=8; rowNumber++){
+      let textString = "";
+      for (let i = 1; i<=8; i++){
+        let className = "";
+        if (((i+(rowNumber%2))%2)===0){
+          className="black";
+        } else{
+          className="white";
+        }
+        let cellId = "_"+ rowNumber +"-"+i;
+        textString += `<td class=${className} id = ${cellId}></td>`;
+      }
+
+      tableChessBoard.innerHTML += `<tr><th>${rowNumber}</th>` + textString + `</th>`
+
+    }
+
+    const white ='ЛКСФККСЛ';
+    const black ='ЛКСКФКСЛ';
+
+
+    for ( let i = 1; i<=8; i++){
+      const idWhite = "_1"+"-"+ i;
+      const idBlack = "_8"+"-"+ i;
+      const idPawn1 = "_2"+"-"+ i;
+      const idPawn2 = "_7"+"-"+ i;
+      document.querySelector(`#${idWhite}`).innerHTML+=white.split("")[i-1];
+      document.querySelector(`#${idBlack}`).innerHTML+=black.split("")[i-1];
+      document.querySelector(`#${idPawn1}`).innerHTML+="П";
+      document.querySelector(`#${idPawn2}`).innerHTML+="П";
+      // document.querySelector(`#${id}`).innerHTML+="x";
+    }
+
+
+    // console.log(chessBoardContainer);
+</script>
+</body>
+</html>
